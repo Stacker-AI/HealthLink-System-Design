@@ -54,9 +54,10 @@ We will design our system for two types of users: Doctor and Patient.
 ### Search Suggestions
 - Endpoint: `/api/top/suggestion.json` 
 - Through this API, patients will be able to search a doctor.
+  
 **Parameters**
-
-- **city: **Wah
+- city: Wah
+  
 **Returns**
 
 ```json
@@ -81,14 +82,16 @@ We will design our system for two types of users: Doctor and Patient.
 ### Search Doctors 
 - Endpoint: `/api/search/doctors/ ` 
 - Through this API, patients will be able to search a doctor.
+
 **Parameters**
 
 - **city: **Delhi
 - **q: **Dentist
-- **page: **2
+- page: 2
+  
 **Returns**
 
-```
+```json
 {
     "doctors": {
         "id": 7347,
@@ -97,7 +100,8 @@ We will design our system for two types of users: Doctor and Patient.
         "specialization": "Dentist",
         "experience_years": 43,
         "city": "Vikas Puri",
-        "available_days": ["MONDAY", "TUESDAY",],
+        "available_days": ["MONDAY", "TUESDAY",
+],
         "consultation_fees": 1000,
         "wait_time": 15,
         "reviews_count": 86
@@ -109,12 +113,14 @@ We will design our system for two types of users: Doctor and Patient.
 ### View Doctor 
 - Endpoint: `/api/view/doctor/ ` 
 - Through this API, patients will be able to search a doctor.
+  
 **Parameters**
 
-- **id: 1**
+- id: 1
+
 **Returns**
 
-```
+```json
 {
     "doctors": {
         "id": 7347,
@@ -125,7 +131,8 @@ We will design our system for two types of users: Doctor and Patient.
         "experience_years": 43,
         "city": "Vikas Puri",
         "available_timings": "20:00",
-        "available_days": ["MONDAY", "TUESDAY",],
+        "available_days": ["MONDAY", "TUESDAY",
+],
         "consultation_fees": 1000,
         "summary": "He completed BDS Degree in 1981",
         "wait_time": 15,
