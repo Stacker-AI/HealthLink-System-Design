@@ -39,8 +39,6 @@ Doctor
 
 ![Low Level/1.png](https://github.com/Stacker-AI/HealthLink-System-Design/blob/main/High%20Level/1.png)
 
-![Low Level/1.png](https://github.com/Stacker-AI/HealthLink-System-Design/blob/main/High%20Level/2.png)
-
 # Low level requirement design (Microservices)
 
 
