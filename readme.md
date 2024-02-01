@@ -182,3 +182,88 @@ ERD Models for the HealthLink.
 ```
 
 
+
+
+
+### Patient Appointment History:
+
+- **Endpoint:** `/api/patient/appointments/history`
+  
+  **Parameters:**
+  - patient_id: 12345
+
+  **Returns:**
+  ```json
+  {
+      "appointments": [
+          {
+              "appointment_id": 5678,
+              "doctor_name": "Dr. Sarah Johnson",
+              "specialization": "Cardiologist",
+              "date": "2024-02-15",
+              "time": "14:30",
+              "status": "completed"
+          },
+          {
+              "appointment_id": 7890,
+              "doctor_name": "Dr. Alex Smith",
+              "specialization": "Dermatologist",
+              "date": "2024-03-10",
+              "time": "11:00",
+              "status": "upcoming"
+          }
+      ]
+  }
+  ```
+
+
+**3. Patient Lab Test Results:**
+
+- **Endpoint:** `/api/patient/lab/results`
+
+  **Parameters:**
+  - patient_id: 12345
+
+  **Returns:**
+  ```json
+  {
+      "lab_results": [
+          {
+              "test_name": "Blood Count",
+              "result": "Normal"
+          },
+          {
+              "test_name": "Cholesterol Level",
+              "result": "High"
+          }
+      ]
+  }
+  ```
+
+### Prescription Details:
+
+- **Endpoint:** `/api/patient/prescription/details`
+
+  **Parameters:**
+  - appointment_id: 5678
+
+  **Returns:**
+  ```json
+  {
+      "prescription": [
+          {
+              "medicine_name": "Aspirin",
+              "dosage": "100mg",
+              "frequency": "Once a day",
+              "duration": "7 days"
+          },
+          {
+              "medicine_name": "Antibiotic",
+              "dosage": "500mg",
+              "frequency": "Twice a day",
+              "duration": "10 days"
+          }
+      ]
+  }
+  ```
+
