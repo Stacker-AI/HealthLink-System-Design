@@ -37,7 +37,7 @@ Doctor
 # High level requirements desgn
 
 
-![1.png]("/Low Level/1.png")
+![1.png](Low Level/1.png)
 
 
 
