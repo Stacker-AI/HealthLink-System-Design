@@ -324,3 +324,129 @@ ERD Models for the HealthLink.
     "message": "Earnings withdrawal successful. Amount: 2000.00"
 }
 ```
+
+---
+
+### Patient Clinical Records
+- Endpoint: `/api/patient/clinical/records/`  
+- Through this API, patients can retrieve their comprehensive clinical records.
+  
+**Parameters**
+- patient_id: 9876
+  
+**Returns**
+
+```json
+{
+    "clinical_records": [
+        {
+            "record_id": 1,
+            "date": "2024-01-15",
+            "description": "Routine Checkup",
+            "prescription": "Paracetamol 500mg, Rest",
+            "test_results": {
+                "Blood Test": "Normal",
+                "X-ray": "No abnormalities detected"
+            }
+        },
+        {
+            "record_id": 2,
+            "date": "2024-02-01",
+            "description": "Follow-up",
+            "prescription": "Antibiotics, Painkillers",
+            "test_results": {
+                "Blood Test": "Abnormal (Low Hemoglobin)",
+                "CT Scan": "No issues found"
+            }
+        }
+    ]
+}
+```
+
+---
+
+### Doctor Appointment Requests
+- Endpoint: `/api/doctor/appointment/requests/`  
+- Through this API, doctors can view and manage appointment requests.
+  
+**Parameters**
+- doctor_id: 7347
+  
+**Returns**
+
+```json
+{
+    "appointment_requests": [
+        {
+            "request_id": 98765,
+            "patient_name": "John Doe",
+            "appointment_date": "2024-02-15",
+            "appointment_time": "10:30 AM",
+            "status": "pending"
+        },
+        {
+            "request_id": 98766,
+            "patient_name": "Jane Doe",
+            "appointment_date": "2024-02-20",
+            "appointment_time": "02:00 PM",
+            "status": "accepted"
+        }
+    ]
+}
+```
+
+---
+
+### Accept Appointment Request
+- Endpoint: `/api/accept/appointment/request/`  
+- Through this API, doctors can accept a pending appointment request.
+  
+**Parameters**
+- request_id: 98765
+  
+**Returns**
+
+```json
+{
+    "status": "accepted",
+    "message": "Appointment request successfully accepted."
+}
+```
+
+---
+
+### Reject Appointment Request
+- Endpoint: `/api/reject/appointment/request/`  
+- Through this API, doctors can reject a pending appointment request.
+  
+**Parameters**
+- request_id: 98765
+  
+**Returns**
+
+```json
+{
+    "status": "rejected",
+    "message": "Appointment request successfully rejected."
+}
+```
+
+---
+
+### System Health Check
+- Endpoint: `/api/system/health/check/`  
+- Through this API, perform a health check on the system.
+  
+**Parameters**
+- None
+  
+**Returns**
+
+```json
+{
+    "status": "ok",
+    "message": "System is healthy and operational."
+}
+```
+
+
