@@ -19,6 +19,8 @@ Patient
 - Patient should be able to add/update/delete clinical records.
 - Patient should be able to book lab tests.
 - Patient should be able to buy medicines.
+
+  
 Doctor
 
 - Doctor should be able to see past and incoming patients.
