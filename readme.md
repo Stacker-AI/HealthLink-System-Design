@@ -37,7 +37,7 @@ Doctor
 # High level requirements desgn
 
 
-[Low Level/1.png](https://github.com/Stacker-AI/HealthLink-System-Design/blob/main/Low%20Level/1.png)
+![Low Level/1.png](https://github.com/Stacker-AI/HealthLink-System-Design/blob/main/Low%20Level/1.png)
 
 
 
