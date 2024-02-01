@@ -2,38 +2,68 @@
 
 # 
 ## What is HealthLink?
-A plateform where a Doctor and Patient can communicate with each other and theri communication will be transcribed and processes by a LLM model and the result will be given back to Doctor and Patient for helping them in Question/Answer, better analysis and remebering previous history.
+A platform facilitating communication between doctors and patients, wherein their interactions are transcribed and processed by an advanced Language Model (LLM). The generated results are then provided to both the doctor and the patient, enhancing the quality of their question-and-answer sessions, enabling more thorough analysis, and aiding in the retention of pertinent medical history. This innovative solution aims to streamline healthcare communication, fostering improved understanding and collaboration between healthcare professionals and their patients.
 
 # Requirements
 Our system should meet the following requirements:
 
-### Functional requirements
-We will design our system for two types of users: Doctor and Patient.
+### Enhanced Functional Requirements
 
-Patient
+**Patient:**
 
-- Patient should be able to find the doctor
-- Patient should be able to make payment.
-- Patient should be able to book appointments.
-- Patient should be able to make Video and Audio along with Chat option.
-- Patient should be able to add/update/delete clinical records.
-- Patient should be able to book lab tests.
-- Patient should be able to buy medicines.
+1. **Doctor Discovery:**
+   - Patients should easily locate and connect with suitable doctors based on specialization, location, and availability.
 
-  
-Doctor
+2. **Payment Processing:**
+   - Seamless payment integration to facilitate secure and convenient transactions for medical services.
 
-- Doctor should be able to see past and incoming patients.
-- Doctor should be able to withdraw money.
-- Doctor should be able to accept/reject apointments.
-- Doctor should be able to assign lab tests and medicines to patients.
-- Doctor should be able to see patient's clinical records.
-#### Non-Functional requirements
-- High reliability.
-- High availability with minimal latency.
-- The system should be scalable and efficient.
-#### Extended requirements
-- Metrics and analytics.
+3. **Appointment Booking:**
+   - Patients should have the capability to schedule, reschedule, or cancel appointments with their chosen healthcare provider.
+
+4. **Communication Features:**
+   - Enable patients to engage in comprehensive consultations through video, audio, and chat functionalities.
+
+5. **Clinical Records Management:**
+   - Empower patients to efficiently manage their health information by adding, updating, or deleting clinical records.
+
+6. **Lab Test Booking:**
+   - Allow patients to book necessary laboratory tests and receive timely results through the platform.
+
+7. **Medicine Purchases:**
+   - Provide a platform for patients to conveniently purchase prescribed medicines with integrated delivery options.
+
+**Doctor:**
+
+1. **Patient Management:**
+   - Doctors should have a comprehensive view of past and upcoming patient appointments, enabling effective time management.
+
+2. **Financial Transactions:**
+   - Facilitate the withdrawal of earnings securely and efficiently for healthcare services provided.
+
+3. **Appointment Control:**
+   - Grant doctors the authority to accept or reject appointment requests based on their availability.
+
+4. **Prescription Management:**
+   - Empower doctors to prescribe lab tests and medications, tracking patient adherence and progress.
+
+5. **Access to Clinical Records:**
+   - Provide doctors with instant access to patients' historical clinical records for informed decision-making.
+
+### Non-Functional Requirements
+
+1. **High Reliability:**
+   - Ensure the system's dependability and consistency to foster trust among users.
+
+2. **High Availability with Minimal Latency:**
+   - Guarantee the system's continuous accessibility, minimizing delays to provide real-time interactions.
+
+3. **Scalability and Efficiency:**
+   - Design the system to scale effortlessly, accommodating a growing user base while maintaining optimal performance.
+
+### Extended Requirements
+
+- **Metrics and Analytics:**
+  - Implement robust tracking mechanisms and analytics tools to gather insights into system usage, user satisfaction, and overall performance. This data can be used for continuous improvement and strategic decision-making.
 
 
 # High level requirements desgn
