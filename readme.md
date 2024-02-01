@@ -10,59 +10,27 @@ Our system should meet the following requirements:
 ### Enhanced Functional Requirements
 
 **Patient:**
-
-1. **Doctor Discovery:**
    - Patients should easily locate and connect with suitable doctors based on specialization, location, and availability.
-
-2. **Payment Processing:**
    - Seamless payment integration to facilitate secure and convenient transactions for medical services.
-
-3. **Appointment Booking:**
    - Patients should have the capability to schedule, reschedule, or cancel appointments with their chosen healthcare provider.
-
-4. **Communication Features:**
    - Enable patients to engage in comprehensive consultations through video, audio, and chat functionalities.
-
-5. **Clinical Records Management:**
    - Empower patients to efficiently manage their health information by adding, updating, or deleting clinical records.
-
-6. **Lab Test Booking:**
    - Allow patients to book necessary laboratory tests and receive timely results through the platform.
-
-7. **Medicine Purchases:**
    - Provide a platform for patients to conveniently purchase prescribed medicines with integrated delivery options.
 
 **Doctor:**
-
-1. **Patient Management:**
    - Doctors should have a comprehensive view of past and upcoming patient appointments, enabling effective time management.
-
-2. **Financial Transactions:**
    - Facilitate the withdrawal of earnings securely and efficiently for healthcare services provided.
-
-3. **Appointment Control:**
    - Grant doctors the authority to accept or reject appointment requests based on their availability.
-
-4. **Prescription Management:**
    - Empower doctors to prescribe lab tests and medications, tracking patient adherence and progress.
-
-5. **Access to Clinical Records:**
    - Provide doctors with instant access to patients' historical clinical records for informed decision-making.
 
 ### Non-Functional Requirements
-
-1. **High Reliability:**
    - Ensure the system's dependability and consistency to foster trust among users.
-
-2. **High Availability with Minimal Latency:**
    - Guarantee the system's continuous accessibility, minimizing delays to provide real-time interactions.
-
-3. **Scalability and Efficiency:**
    - Design the system to scale effortlessly, accommodating a growing user base while maintaining optimal performance.
 
 ### Extended Requirements
-
-- **Metrics and Analytics:**
   - Implement robust tracking mechanisms and analytics tools to gather insights into system usage, user satisfaction, and overall performance. This data can be used for continuous improvement and strategic decision-making.
 
 
@@ -97,13 +65,16 @@ ERD Models for the HealthLink.
 
 
 
-# API design
+
+# API Design
+
 ### Search Suggestions
 - Endpoint: `/api/top/suggestion.json`  
 - Through this API, patients will be able to search a doctor.
+  
 **Parameters**
-
 - city: Wah
+  
 **Returns**
 
 ```json
@@ -121,46 +92,53 @@ ERD Models for the HealthLink.
     }
 }
 ```
+
 ---
 
 ### Search Doctors
-- Endpoint: `/api/search/doctors/ `  
+- Endpoint: `/api/search/doctors/`  
 - Through this API, patients will be able to search a doctor.
+  
 **Parameters**
-
 - city: Delhi
 - q: Dentist
 - page: 2
+  
 **Returns**
 
 ```json
 {
-    "doctors": {
-        "id": 7347,
-        "profile_photo_url": "https://images1-fabric.practo.com/",
-        "doctor_name": "Dr. Janak Raj Sabharwal",
-        "specialization": "Dentist",
-        "experience_years": 43,
-        "city": "Vikas Puri",
-        "available_days": ["MONDAY", "TUESDAY",
-],
-        "consultation_fees": 1000,
-        "wait_time": 15,
-        "reviews_count": 86
-    }
+    "doctors": [
+        {
+            "id": 7347,
+            "profile_photo_url": "https://images1-fabric.practo.com/",
+            "doctor_name": "Dr. Janak Raj Sabharwal",
+            "specialization": "Dentist",
+            "experience_years": 43,
+            "city": "Vikas Puri",
+            "available_days": ["MONDAY", "TUESDAY"],
+            "consultation_fees": 1000,
+            "wait_time": 15,
+            "reviews_count": 86
+        }
+    ]
 }
 ```
-### View Doctor
-- Endpoint: `/api/view/doctor/ `  
-- Through this API, patients will be able to search a doctor.
-**Parameters**
 
-- id: 1
+---
+
+### View Doctor
+- Endpoint: `/api/view/doctor/`  
+- Through this API, patients will be able to view detailed information about a specific doctor.
+  
+**Parameters**
+- id: 7347
+  
 **Returns**
 
 ```json
 {
-    "doctors": {
+    "doctor": {
         "id": 7347,
         "profile_photo_url": "https://images1-fabric.practo.com/",
         "doctor_name": "Dr. Janak Raj Sabharwal",
@@ -169,8 +147,7 @@ ERD Models for the HealthLink.
         "experience_years": 43,
         "city": "Vikas Puri",
         "available_timings": "20:00",
-        "available_days": ["MONDAY", "TUESDAY",
-],
+        "available_days": ["MONDAY", "TUESDAY"],
         "consultation_fees": 1000,
         "summary": "He completed BDS Degree in 1981",
         "wait_time": 15,
@@ -181,89 +158,169 @@ ERD Models for the HealthLink.
 }
 ```
 
+---
 
-
-
-
-### Patient Appointment History:
-
-- **Endpoint:** `/api/patient/appointments/history`
+### Book Appointment
+- Endpoint: `/api/book/appointment/`  
+- Through this API, patients can book an appointment with a specific doctor.
   
-  **Parameters:**
-  - patient_id: 12345
+**Parameters**
+- doctor_id: 7347
+- appointment_date: "2024-02-15"
+- appointment_time: "10:30 AM"
+- patient_name: "John Doe"
+- patient_email: "john.doe@example.com"
+  
+**Returns**
 
-  **Returns:**
-  ```json
-  {
-      "appointments": [
-          {
-              "appointment_id": 5678,
-              "doctor_name": "Dr. Sarah Johnson",
-              "specialization": "Cardiologist",
-              "date": "2024-02-15",
-              "time": "14:30",
-              "status": "completed"
-          },
-          {
-              "appointment_id": 7890,
-              "doctor_name": "Dr. Alex Smith",
-              "specialization": "Dermatologist",
-              "date": "2024-03-10",
-              "time": "11:00",
-              "status": "upcoming"
-          }
-      ]
-  }
-  ```
+```json
+{
+    "appointment": {
+        "id": 12345,
+        "doctor_id": 7347,
+        "patient_name": "John Doe",
+        "appointment_date": "2024-02-15",
+        "appointment_time": "10:30 AM",
+        "status": "confirmed"
+    }
+}
+```
 
+---
 
-**3. Patient Lab Test Results:**
+### Cancel Appointment
+- Endpoint: `/api/cancel/appointment/`  
+- Through this API, patients can cancel a previously booked appointment.
+  
+**Parameters**
+- appointment_id: 12345
+  
+**Returns**
 
-- **Endpoint:** `/api/patient/lab/results`
+```json
+{
+    "status": "cancelled",
+    "message": "Appointment successfully cancelled."
+}
+```
 
-  **Parameters:**
-  - patient_id: 12345
+---
 
-  **Returns:**
-  ```json
-  {
-      "lab_results": [
-          {
-              "test_name": "Blood Count",
-              "result": "Normal"
-          },
-          {
-              "test_name": "Cholesterol Level",
-              "result": "High"
-          }
-      ]
-  }
-  ```
+### Patient Records
+- Endpoint: `/api/patient/records/`  
+- Through this API, patients can retrieve and manage their clinical records.
+  
+**Parameters**
+- patient_id: 9876
+  
+**Returns**
 
-### Prescription Details:
+```json
+{
+    "records": [
+        {
+            "record_id": 1,
+            "date": "2024-01-15",
+            "description": "Routine Checkup",
+            "prescription": "Paracetamol 500mg, Rest"
+        },
+        {
+            "record_id": 2,
+            "date": "2024-02-01",
+            "description": "Follow-up",
+            "prescription": "Antibiotics, Painkillers"
+        }
+    ]
+}
+```
 
-- **Endpoint:** `/api/patient/prescription/details`
+---
 
-  **Parameters:**
-  - appointment_id: 5678
+### Lab Test Booking
+- Endpoint: `/api/book/labtest/`  
+- Through this API, patients can book laboratory tests.
+  
+**Parameters**
+- patient_id: 9876
+- test_name: "Blood Test"
+- appointment_date: "2024-02-10"
+  
+**Returns**
 
-  **Returns:**
-  ```json
-  {
-      "prescription": [
-          {
-              "medicine_name": "Aspirin",
-              "dosage": "100mg",
-              "frequency": "Once a day",
-              "duration": "7 days"
-          },
-          {
-              "medicine_name": "Antibiotic",
-              "dosage": "500mg",
-              "frequency": "Twice a day",
-              "duration": "10 days"
-          }
-      ]
-  }
-  ```
+```json
+{
+    "lab_test_booking": {
+        "booking_id": 54321,
+        "patient_id": 9876,
+        "test_name": "Blood Test",
+        "appointment_date": "2024-02-10",
+        "status": "scheduled"
+    }
+}
+```
 
+---
+
+### Medicine Purchase
+- Endpoint: `/api/purchase/medicine/`  
+- Through this API, patients can purchase prescribed medicines.
+  
+**Parameters**
+- patient_id: 9876
+- medicine_name: "Paracetamol"
+- quantity: 2
+  
+**Returns**
+
+```json
+{
+    "medicine_purchase": {
+        "purchase_id": 987654,
+        "patient_id": 9876,
+        "medicine_name": "Paracetamol",
+        "quantity": 2,
+        "total_cost": 10.00,
+        "delivery_status": "pending"
+    }
+}
+```
+
+---
+
+### Doctor Earnings
+- Endpoint: `/api/doctor/earnings/`  
+- Through this API, doctors can view their earnings.
+  
+**Parameters**
+- doctor_id: 7347
+  
+**Returns**
+
+```json
+{
+    "earnings": {
+        "doctor_id": 7347,
+        "total_earnings": 5000.00,
+        "withdrawable_amount": 4500.00
+    }
+}
+```
+
+---
+
+### Withdraw Earnings
+- Endpoint: `/api/withdraw/earnings/`  
+- Through this API, doctors can withdraw their earnings.
+  
+**Parameters**
+- doctor_id: 7347
+- amount: 2000.00
+  
+**Returns**
+
+```json
+{
+    "status": "success",
+    "message": "Earnings withdrawal successful. Amount: 2000.00"
+}
+```
