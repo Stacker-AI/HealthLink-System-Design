@@ -37,7 +37,7 @@ Doctor
 # High level requirements desgn
 
 
-![1.png](https://eraser.imgix.net/workspaces/bFh3OmlJ42dsrcGqhv1p/XCoQ2ksmpMfjUXTpurmNUsmSp3m2/nhZ1Rg6vzrRgPI-qjj-2j.png?ixlib=js-3.7.0 "1.png")
+![1.png]("/Low Level/1.png")
 
 
 
