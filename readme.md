@@ -41,12 +41,16 @@ Our system should meet the following requirements:
 
 - Angular Material
 - NgRx
-- WebRTC 
+- WebRTC
+
+  
 **Backend:**
 
 - Django Rest Framework
 - Django Filter for filtering querysets
 - Django Channels
+
+  
 **DevOps:**
 
 - AWS RDS
@@ -55,12 +59,16 @@ Our system should meet the following requirements:
 - Docker
 - GitHub CI/CD
 - Datadog
+
+  
 **Machine Learning:**
 
 - LangChain
 - Meilisearch
 - Tensorflow
 - LLM Model (OpenAI/Open Source)
+
+  
 **Other:**
 
 - Redis
