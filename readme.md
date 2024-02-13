@@ -34,6 +34,43 @@ Our system should meet the following requirements:
   - Implement robust tracking mechanisms and analytics tools to gather insights into system usage, user satisfaction, and overall performance. This data can be used for continuous improvement and strategic decision-making.
 
 
+
+# Requirements for Tools & Libraries
+
+**Frontend:**
+
+- Angular Material
+- NgRx
+- WebRTC 
+**Backend:**
+
+- Django Rest Framework
+- Django Filter for filtering querysets
+- Django Channels
+**DevOps:**
+
+- AWS RDS
+- AWS EC2
+- AWS S3
+- Docker
+- GitHub CI/CD
+- Datadog
+**Machine Learning:**
+
+- LangChain
+- Meilisearch
+- Tensorflow
+- LLM Model (OpenAI/Open Source)
+**Other:**
+
+- Redis
+- Celery 
+- JWT
+- Swagger API documentation
+- Google Maps API
+- Twilio (SMS or Voice)
+
+
 # High level requirements desgn
 
 
